@@ -1,6 +1,6 @@
 {
   "name": "vue-data-map",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A configurable Vue 3 data dashboard component (KPI cards + multi-type charts + China map) powered by ECharts.",
   "type": "module",
   "main": "./dist/vue-data-map.cjs",
