@@ -1,0 +1,14 @@
+{
+  "name": "vue-data-map-monorepo",
+  "private": true,
+  "version": "0.0.0",
+  "workspaces": [
+    "packages/*",
+    "playground"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w playground",
+    "build": "npm run build -w vue-data-map",
+    "build:demo": "npm run build -w playground"
+  }
+}

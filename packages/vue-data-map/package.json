@@ -1,0 +1,58 @@
+{
+  "name": "vue-data-map",
+  "version": "0.1.0",
+  "description": "A configurable Vue 3 data dashboard component (KPI cards + multi-type charts + China map) powered by ECharts.",
+  "type": "module",
+  "main": "./dist/vue-data-map.cjs",
+  "module": "./dist/vue-data-map.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/vue-data-map.js",
+      "require": "./dist/vue-data-map.cjs"
+    },
+    "./style.css": "./dist/vue-data-map.css"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly -p tsconfig.build.json && node scripts/post-build.mjs",
+    "build:types": "vue-tsc --declaration --emitDeclarationOnly -p tsconfig.build.json"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "dashboard",
+    "data-map",
+    "echarts",
+    "data-visualization",
+    "kpi",
+    "chart"
+  ],
+  "author": "jasperliu2026ai",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jasperliu2026ai/vue-data-map.git"
+  },
+  "homepage": "https://github.com/jasperliu2026ai/vue-data-map",
+  "bugs": {
+    "url": "https://github.com/jasperliu2026ai/vue-data-map/issues"
+  },
+  "peerDependencies": {
+    "echarts": "^5.4.0",
+    "vue": "^3.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.0",
+    "echarts": "^5.5.0",
+    "typescript": "^5.4.0",
+    "vite": "^5.2.0",
+    "vue": "^3.4.0",
+    "vue-tsc": "^2.0.0"
+  }
+}
