@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      id-token: write   # required for npm Trusted Publishing (OIDC)
     steps:
       - uses: actions/checkout@v4
 
@@ -18,10 +17,6 @@ jobs:
         with:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org'
-
-      # npm >= 11.5.1 is required for Trusted Publishing
-      - name: Upgrade npm
-        run: npm install -g npm@latest
 
       - name: Install
         run: npm install
@@ -31,5 +26,6 @@ jobs:
 
       - name: Publish
         working-directory: packages/vue-data-map
-        # No NODE_AUTH_TOKEN needed — npm CLI auto-detects GitHub OIDC
-        run: npm publish --access public --provenance
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
